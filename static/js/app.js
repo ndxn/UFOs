@@ -42,20 +42,20 @@ function updateFilters() {
   // to the filters list. Otherwise, clear that filter from the filters object
   // ##### Doing so within each variable
 
-  if(date) { filters['datetime'] = date; } 
-  else { delete filters['datetime']; }
+  if(date) {filters['datetime'] = date;} 
+    else {delete filters['datetime'];}
 
-  if(city) { filters['city'] = city; } 
-  else { delete filters['city']; }
+  if(city) {filters['city'] = city;} 
+    else {delete filters['city'];}
 
-  if(state) { filters['state'] = state; } 
-  else { delete filters['state']; }
+  if(state) {filters['state'] = state;} 
+    else {delete filters['state'];}
 
-  if(country) { filters['country'] = country; } 
-  else { delete filters['country']; }
+  if(country) {filters['country'] = country;} 
+    else {delete filters['country'];}
 
-  if(shape) { filters['shape'] = shape; } 
-  else { delete filters['shape']; }
+  if(shape) {filters['shape'] = shape;} 
+    else {delete filters['shape'];}
 
   // Call function to apply all filters and rebuild the table
   filterTable(filters);
@@ -69,7 +69,7 @@ function filterTable(params) {
   // Loop through all of the filters and keep any data that
   // matches the filter values
   if(params) {
-    Object.keys(filters).forEach(function (key){
+    Object.keys(params).forEach(function (key){
         filteredData = filteredData.filter(row => row[key] === filters[key]);
     });
 }
